@@ -61,7 +61,7 @@ const App = () => {
     },
   ]);
   const [dragId, setDragId] = useState();
-  const [selectedProducts,setSelectedProducts] = useState([]);
+  const [selectedProducts, setSelectedProducts] = useState([]);
 
   //functions to handle drag and drop
   const handleDrag = (e) => {
@@ -94,7 +94,11 @@ const App = () => {
       <div className=" max-w-6xl mx-auto p-8 lg:w-[60%] ">
         <div className="bg-slate-50 rounded-lg">
           <div className=" p-5 border-b border-gray-400">
-            <h3 className="font-bold">Gallery</h3>
+            <h3 className="font-bold">
+              {!selectedProducts.length
+                ? "Gallery"
+                : `${selectedProducts.length + " Filed Selected"}`}
+            </h3>
           </div>
           <div className="grid grid-cols-5 gap-5 p-7">
             {products
@@ -111,6 +115,14 @@ const App = () => {
                   setSelectedProducts={setSelectedProducts}
                 />
               ))}
+            <div className="border-2 border-gray-300 rounded-lg bg-gray-300 flex flex-col justify-center items-center gap-5 cursor-pointer">
+              <img
+                 className="w-6"
+                src="https://www.svgrepo.com/show/457965/img-box.svg"
+                alt="img"
+              />
+               <p className="text-sm font-bold">Add Images</p>
+            </div>
           </div>
         </div>
       </div>
