@@ -1,6 +1,8 @@
-import {  useState } from "react";
+import { useState } from "react";
 import Product from "./Product.jsx";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
+import './App.css'
+
 const App = () => {
   const [animationParent] = useAutoAnimate();
   const [products, setProducts] = useState([
@@ -64,7 +66,7 @@ const App = () => {
   const [selectedProducts, setSelectedProducts] = useState([]);
   const [dragId, setDragId] = useState();
 
-  console.log(products);
+
 
   // Filter out the products that have an id that is not in the selectedProducts state
   const handleRemoveSelected = () => {
@@ -120,7 +122,7 @@ const App = () => {
 
   return (
     <div className="min-h-screen bg-slate-200 flex justify-center items-center">
-      <div className=" max-w-6xl mx-auto p-8 lg:w-[60%]   ">
+      <div className=" max-w-6xl mx-auto p-8 lg:w-[70%]   ">
         <div className="bg-slate-50 rounded-lg ">
           <div className=" p-5 border-b border-gray-400 flex justify-between items-center">
             <h3 className="font-bold">
@@ -142,7 +144,8 @@ const App = () => {
           </div>
           <div
             ref={animationParent}
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 p-7 "
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 p-7 product-grid"
+          
           >
             {products
               .sort((a, b) => a.order - b.order)

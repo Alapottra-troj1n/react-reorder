@@ -25,12 +25,13 @@ const Product = ({
         order === 1 && "col-span-2 row-span-2  " //different size for featured image
       } cursor-pointer  rounded-xl border-2 border-gray-300 overflow-hidden hover:filter  transition-all
       ${isProductSelected ? "filter brightness-50" : "hover:brightness-75 "}
-      relative group  `}
+      relative group  h-full`}
       draggable={true}
       id={productId}
       onDragOver={(ev) => ev.preventDefault()}
       onDragStart={handleDrag}
       onDrop={handleDrop}
+    
     >
       <input
         type="checkbox"
@@ -41,7 +42,7 @@ const Product = ({
         checked={isProductSelected}
         onChange={handleToggle}
       />
-      <img className="w-full" src={path} alt="product" />
+      <img className="w-full h-full object-cover" src={path} alt="product" />
     </div>
   );
 };
