@@ -157,7 +157,7 @@ const App = () => {
                   setSelectedProducts={setSelectedProducts}
                 />
               ))}
-            <div className="border-2 border-dashed border-gray-300 rounded-lg bg-gray-100 flex flex-col justify-center items-center gap-5 cursor-pointer">
+            <div className="border-2 border-dashed border-gray-300 rounded-lg bg-gray-100 flex flex-col justify-center items-center gap-5 cursor-pointer min-h-[150px]">
               <label htmlFor="file-input" className="cursor-pointer flex flex-col justify-center items-center gap-3">
                 <img
                   className="w-6"
