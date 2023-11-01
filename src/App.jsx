@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import {  useState } from "react";
 import Product from "./Product.jsx";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 const App = () => {
@@ -103,7 +103,6 @@ const App = () => {
     setProducts(newProductsState);
   };
 
-
   //file upload mockup
   const handleFile = (e) => {
     const file = e.target.files[0];
@@ -159,8 +158,11 @@ const App = () => {
                   setSelectedProducts={setSelectedProducts}
                 />
               ))}
-            <div className="border-2 border-dashed border-gray-300 rounded-lg bg-gray-100 flex flex-col justify-center items-center gap-5 cursor-pointer min-h-[150px]">
-              <label htmlFor="file-input" className="cursor-pointer flex flex-col justify-center items-center gap-3">
+            <div className="border-2 border-dashed border-gray-300 rounded-lg bg-gray-100 flex flex-col justify-center items-center gap-5 cursor-pointer lg:min-h-[150px]">
+              <label
+                htmlFor="file-input"
+                className="cursor-pointer flex flex-col justify-center items-center gap-3"
+              >
                 <img
                   className="w-6"
                   src="https://www.svgrepo.com/show/457965/img-box.svg"
