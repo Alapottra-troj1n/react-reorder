@@ -60,12 +60,11 @@ const App = () => {
       path: "/images/image-1.webp",
       order: 11,
     },
-    
   ]);
   const [selectedProducts, setSelectedProducts] = useState([]);
   const [dragId, setDragId] = useState();
 
-  console.log(products)
+  console.log(products);
 
   // Filter out the products that have an id that is not in the selectedProducts state
   const handleRemoveSelected = () => {
@@ -158,14 +157,22 @@ const App = () => {
                   setSelectedProducts={setSelectedProducts}
                 />
               ))}
-            <div className="border-2 border-dashed border-gray-300 rounded-lg bg-gray-100 flex flex-col justify-center items-center gap-5 cursor-pointer relative">
-              <img
-                className="w-6"
-                src="https://www.svgrepo.com/show/457965/img-box.svg"
-                alt="img"
+            <div className="border-2 border-dashed border-gray-300 rounded-lg bg-gray-100 flex flex-col justify-center items-center gap-5 cursor-pointer">
+              <label htmlFor="file-input" className="cursor-pointer flex flex-col justify-center items-center gap-3">
+                <img
+                  className="w-6"
+                  src="https://www.svgrepo.com/show/457965/img-box.svg"
+                  alt="img"
+                />
+                <p className="text-sm font-bold">Add Images</p>
+              </label>
+              <input
+                type="file"
+                id="file-input"
+                className="hidden"
+                name="file-handle"
+                onChange={handleFile}
               />
-              <p className="text-sm font-bold">Add Images</p>
-              <input type="file" className="opacity-0 absolute w-full h-full" name="file-handle" onChange={handleFile} />
             </div>
           </div>
         </div>
