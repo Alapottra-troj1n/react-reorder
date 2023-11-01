@@ -103,6 +103,8 @@ const App = () => {
     setProducts(newProductsState);
   };
 
+
+  //file upload mockup
   const handleFile = (e) => {
     const file = e.target.files[0];
 
